@@ -52,6 +52,9 @@ export default function Admin() {
     const editUser = async (e) => {
         try {
             e.preventDefault()
+            if (!newId) {
+                return;
+            }
             let keyId = data[newId].id
             console.log(newFirst, newLast, newPosition)
 
@@ -61,6 +64,7 @@ export default function Admin() {
             console.log(edited)
 
         } catch(err) {
+
             setError (err)
             console.log(err)
 
@@ -73,12 +77,14 @@ export default function Admin() {
         try {
             e.preventDefault()
             let payload = {name: firstName, lastname: lastName, position: position}
+
             if (payload.name === "" && payload.lastname === "" && payload.position === "") {
                 alert ("Do not put an empty value.")
             }
-            let newUser = await axios.post("https://jsd5-mock-backend.onrender.com/members",
-                payload)
+
+            let newUser = await axios.post("https://jsd5-mock-backend.onrender.com/members",payload)
             console.log(newUser)
+
         } catch(err) {
             setError ("Eieie")
             console.log(err)
@@ -101,7 +107,10 @@ export default function Admin() {
         }
 
     }
+    const preFill = async (e) => {
+        setNewId(`${data}`)
 
+    }
     useEffect(() => {
         fetchUsers()
     }, [])
@@ -188,16 +197,17 @@ export default function Admin() {
                 <th className="w-[200px] border-x-1">Name</th>
                 <th className="w-[200px] border-x-1">Last Name</th>
                 <th className="w-[200px] border-x-1">Position</th>
-                <th className="w-[200px] border-x-1">Action</th>
+                <th className="w-[400px] border-x-1">Action</th>
             </tr>
             {data.map((member,index) => (
                 <tr className="font-semibold h-[36px]" key={member.id}>
-                    <td className="w-[200px] border-x-1 border-y-1 text-center bg-white">{index}</td>
+                    <td className="w-[400px] border-x-1 border-y-1 text-center bg-white">{index}</td>
                     <td className="w-[200px] border-x-1 border-y-1 text-center bg-white">{member.name}</td>
                     <td className="w-[200px] border-x-1 border-y-1 text-center bg-white">{member.lastname}</td>
                     <td className="w-[200px] border-x-1 border-y-1 text-center bg-white">{member.position}</td>
                     <td className="w-[200px] border-x-1 border-y-1 text-center bg-white">
-                        <button onClick={ ()=> deleteUser(member.id)} className="bg-red-400 text-white px-2 w-[128px] h-[26px] rounded hover:font-bold hover:bg-red-500 hover:cursor-pointer">Delete</button>
+                        <button onClick={ ()=> deleteUser(member.id)} className="bg-red-400 text-white px-2 w-[128px] h-[26px] rounded hover:font-bold hover:bg-red-500 hover:cursor-pointer">Delete</button> /
+                        <button onClick={ ()=> preFill(member.id)} className="bg-blue-400 text-white px-2 w-[128px] h-[26px] rounded hover:font-bold hover:bg-blue-500 hover:cursor-pointer">Delete</button>
                     </td>
                 </tr>
                 ))}
