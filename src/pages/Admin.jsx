@@ -207,7 +207,7 @@ export default function Admin() {
                     <td className="w-[200px] border-x-1 border-y-1 text-center bg-white">{member.position}</td>
                     <td className="w-[200px] border-x-1 border-y-1 text-center bg-white">
                         <button onClick={ ()=> deleteUser(member.id)} className="bg-red-400 text-white px-2 w-[128px] h-[26px] rounded hover:font-bold hover:bg-red-500 hover:cursor-pointer">Delete</button> /
-                        <button onClick={ ()=> preFill(member.id)} className="bg-blue-400 text-white px-2 w-[128px] h-[26px] rounded hover:font-bold hover:bg-blue-500 hover:cursor-pointer">Delete</button>
+                        <button onClick={ ()=> preFill(member.id)} className="bg-blue-400 text-white px-2 w-[128px] h-[26px] rounded hover:font-bold hover:bg-blue-500 hover:cursor-pointer">Edit</button>
                     </td>
                 </tr>
                 ))}
