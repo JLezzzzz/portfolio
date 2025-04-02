@@ -20,6 +20,11 @@ export default function Admin() {
     const [lastName, setLastName] = useState("");
     const [position, setPosition] = useState("");
 
+    const [newId, setNewId] = useState("");
+    const [newFirst, setNewFirst] = useState("");
+    const [newLast, setNewLast] = useState("");
+    const [newPosition, setNewPosition] = useState("")
+
 
     const fetchUsers = async () => {
         try {
@@ -39,6 +44,30 @@ export default function Admin() {
         setFirstName("")
         setLastName("")
         setPosition("")
+        setNewId("")
+        setNewFirst("")
+        setNewLast("")
+        setNewPosition("")
+    }
+    const editUser = async (e) => {
+        try {
+            e.preventDefault()
+            let keyId = data[newId].id
+            console.log(newFirst, newLast, newPosition)
+
+            let payload = {id: keyId ,name: newFirst, lastname: newLast, position: newPosition}
+            let edited = await axios.put("https://jsd5-mock-backend.onrender.com/members",
+                payload)
+            console.log(edited)
+
+        } catch(err) {
+            setError (err)
+            console.log(err)
+
+        } finally {
+            fetchUsers();
+            clearStuff();
+        }
     }
     const createUser = async (e) => {
         try {
@@ -94,6 +123,7 @@ export default function Admin() {
             </div>
         </div>
 
+        {/* This is for Create user section */}
         <div className="flex flex-col items-center">
             <div className="mb-12 w-[1077px] h-[100px]">
                 <span className="px-4 text-2xl text-black rounded-md font-bold">Create User Here</span>
@@ -120,23 +150,58 @@ export default function Admin() {
                 </Form>
             </div>
 
+            {/* This is for Edit section */}
+            <div className="mb-12 w-[1200px] h-[100px]">
+                <span className="px-4 text-2xl text-black rounded-md font-bold">Edit information here</span>
+                <Form onSubmit={editUser} method="put" className="flex gap-12 mt-4 justify-center">
+                <input
+                    onChange={(e) => setNewId(e.target.value)}
+                    value={newId}
+                    type="text"
+                    className="p-2 bg-gray-100 rounded-md w-[50px] h-[56px] text-black "
+                    placeholder="Id"/>
+                <input
+                    onChange={(e) => setNewFirst(e.target.value)}
+                    value={newFirst}
+                    type="text"
+                    className="p-2 bg-gray-100 rounded-md w-[300px] h-[56px] text-black "
+                    placeholder="Name"/>
+                <input
+                    onChange={(e) => setNewLast(e.target.value)}
+                    value={newLast}
+                    type="text"
+                    className="p-2 bg-gray-100 rounded-md w-[300px] h-[56px] text-black "
+                    placeholder="Last Name"/>
+                <input
+                    onChange={(e) => setNewPosition(e.target.value)}
+                    value={newPosition}
+                    type="text"
+                    className="p-2 bg-gray-100 rounded-md w-[300px] h-[56px] text-black "
+                    placeholder="Position"/>
+                    <button type="submit" className="bg-[#5E5BFF] w-[63px] h-[48px] rounded-md text-white font-semibold hover:font-extrabold hover:cursor-pointer">Edit</button>
+                </Form>
+            </div>
+
             <table className="outline-1 w-auto">
             <tr className="font-semibold h-[36px]">
+                <th className="w-[200px] border-x-1">Id</th>
                 <th className="w-[200px] border-x-1">Name</th>
                 <th className="w-[200px] border-x-1">Last Name</th>
                 <th className="w-[200px] border-x-1">Position</th>
                 <th className="w-[200px] border-x-1">Action</th>
             </tr>
-            {data.map((member) => (
+            {data.map((member,index) => (
                 <tr className="font-semibold h-[36px]" key={member.id}>
+                    <td className="w-[200px] border-x-1 border-y-1 text-center bg-white">{index}</td>
                     <td className="w-[200px] border-x-1 border-y-1 text-center bg-white">{member.name}</td>
                     <td className="w-[200px] border-x-1 border-y-1 text-center bg-white">{member.lastname}</td>
                     <td className="w-[200px] border-x-1 border-y-1 text-center bg-white">{member.position}</td>
-                    <td className="w-[200px] border-x-1 border-y-1 text-center bg-white"><button onClick={ ()=> deleteUser(member.id)} className="bg-red-400 text-white px-2 w-[128px] h-[26px] rounded hover:font-bold hover:bg-red-500 hover:cursor-pointer">Delete</button></td>
+                    <td className="w-[200px] border-x-1 border-y-1 text-center bg-white">
+                        <button onClick={ ()=> deleteUser(member.id)} className="bg-red-400 text-white px-2 w-[128px] h-[26px] rounded hover:font-bold hover:bg-red-500 hover:cursor-pointer">Delete</button>
+                    </td>
                 </tr>
                 ))}
             </table>
-            <button className="bg-blue-400 text-black font-bold mt-8 w-[800px] h-[32px] rounded hover:font-bold hover:bg-blue-500 hover:cursor-pointer">Edit member information</button>
             {loading && <p className="text-center bg-white mt-4">Fetching data...</p>}
             {error && <p className="text-center text-red-500">{error}</p>}
         </div>
