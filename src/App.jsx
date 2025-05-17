@@ -1,9 +1,7 @@
 import {createBrowserRouter,RouterProvider,} from "react-router-dom";
 import Layout from "./components/Layout"
 import Home from "./pages/Home"
-import Owner from "./pages/Owner";
-import Admin from "./pages/Admin";
-import User from "./pages/User";
+import Projects from "./pages/Projects";
 
 
 const router = createBrowserRouter([
@@ -17,9 +15,8 @@ const router = createBrowserRouter([
       ),
       children: [
         { path: "/", element: <Home /> },
-        { path: "/owner", element: <Owner /> },
-        { path: "/admin", element: <Admin /> },
-        { path: "/user", element: <User /> },
+        { path: "/projects", element: <Projects /> },
+
       ],
     },
   ]);

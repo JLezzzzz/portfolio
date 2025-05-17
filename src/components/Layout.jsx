@@ -7,7 +7,7 @@ const Layout = () => {
         <nav className="text-black p-4 shadow-md border-b-2 border-black">
           <ul className="flex gap-4 justify-end mr-4">
             <li><Link to="/" className="hover:text-gray-600">Home</Link></li>
-            <li><Link to="/owner" className="hover:text-gray-600">Owner</Link></li>
+            <li><Link to="/projects" className="hover:text-gray-600">My Projects</Link></li>
           </ul>
         </nav>
 
