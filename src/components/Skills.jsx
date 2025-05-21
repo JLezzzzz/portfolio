@@ -2,58 +2,58 @@ import React from 'react';
 
 function Skills() {
   return (
-    <div className='flex flex-col items-center gap-8 w-[1000px]'>
-      <div className='w-full p-5'>
-        <h2 className='text-xl font-bold'>Skills</h2>
-        <div className='grid grid-cols-2 gap-4 mt-2 mx-auto'>
+    <div className='flex flex-col items-center gap-6 bg-white p-6 rounded-xl shadow-md'>
+      <div className='w-full'>
+        <h2 className='text-3xl font-bold text-gray-800 mb-4'>Skills</h2>
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
           <div>
-            <h3 className='text-lg font-semibold'>Programming Language</h3>
-            <ul className='pl-5'>
-              <li className='list-disc'>Javascript</li>
-              <li className='list-disc'>Typescript (On going)</li>
-              <li className='list-disc'>Go (On road map)</li>
-              <li className='list-disc'>C# (On road map)</li>
+            <h3 className='text-xl font-semibold text-gray-800'>Programming Languages</h3>
+            <ul className='text-gray-600 pl-5 list-disc'>
+              <li>JavaScript</li>
+              <li>TypeScript (On going)</li>
+              <li>Go (On road map)</li>
+              <li>C# (On road map)</li>
             </ul>
           </div>
           <div>
-            <h3 className='text-lg font-semibold'>Front-End</h3>
-            <ul className='pl-5'>
-              <li className='list-disc'>HTML, CSS, Javascript</li>
-              <li className='list-disc'>React</li>
-              <li className='list-disc'>Tailwind</li>
-              <li className='list-disc'>Material UI</li>
-              <li className='list-disc'>Shadcn</li>
+            <h3 className='text-xl font-semibold text-gray-800'>Front-End</h3>
+            <ul className='text-gray-600 pl-5 list-disc'>
+              <li>HTML, CSS, JavaScript</li>
+              <li>React</li>
+              <li>Tailwind</li>
+              <li>Material UI</li>
+              <li>Shadcn</li>
             </ul>
           </div>
           <div>
-            <h3 className='text-lg font-semibold'>Back-End</h3>
-            <ul className='pl-5'>
-              <li className='list-disc'>Node.js</li>
-              <li className='list-disc'>Express.js</li>
+            <h3 className='text-xl font-semibold text-gray-800'>Back-End</h3>
+            <ul className='text-gray-600 pl-5 list-disc'>
+              <li>Node.js</li>
+              <li>Express.js</li>
             </ul>
           </div>
           <div>
-            <h3 className='text-lg font-semibold'>Database & DevOps</h3>
-            <ul className='pl-5'>
-              <li className='list-disc'>MongoDB</li>
-              <li className='list-disc'>SQLite</li>
-              <li className='list-disc'>Git/GitHub</li>
+            <h3 className='text-xl font-semibold text-gray-800'>Database & DevOps</h3>
+            <ul className='text-gray-600 pl-5 list-disc'>
+              <li>MongoDB</li>
+              <li>SQLite</li>
+              <li>Git/GitHub</li>
             </ul>
           </div>
           <div>
-            <h3 className='text-lg font-semibold'>Tools</h3>
-            <ul className='pl-5'>
-              <li className='list-disc'>Figma</li>
-              <li className='list-disc'>Postman</li>
-              <li className='list-disc'>Swagger</li>
+            <h3 className='text-xl font-semibold text-gray-800'>Tools</h3>
+            <ul className='text-gray-600 pl-5 list-disc'>
+              <li>Figma</li>
+              <li>Postman</li>
+              <li>Swagger</li>
             </ul>
           </div>
           <div>
-            <h3 className='text-lg font-semibold'>Soft Skills</h3>
-            <ul className='pl-5'>
-              <li className='list-disc'>Leader qualification</li>
-              <li className='list-disc'>Objective handling and time management</li>
-              <li className='list-disc'>Team collaboration</li>
+            <h3 className='text-xl font-semibold text-gray-800'>Soft Skills</h3>
+            <ul className='text-gray-600 pl-5 list-disc'>
+              <li>Leadership</li>
+              <li>Objective handling and time management</li>
+              <li>Team collaboration</li>
             </ul>
           </div>
         </div>

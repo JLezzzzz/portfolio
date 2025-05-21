@@ -11,7 +11,7 @@ const Layout = () => {
           </ul>
         </nav>
 
-        <div className="p-6 mx-auto w-full bg-gray-300 outline-1">
+        <div className="mx-auto w-full h-full">
           <Outlet />
         </div>
 
