@@ -14,7 +14,10 @@ const router = createBrowserRouter([
         </div>
       ),
       children: [
-        { path: "/", element: <Home /> },
+        { path: "/", 
+          element:  <div className="scroll-smooth">
+                    <Home />
+                    </div> },
         { path: "/projects", element: <Projects /> },
 
       ],

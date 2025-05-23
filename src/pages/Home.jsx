@@ -23,7 +23,7 @@ export default function Home() {
     };
 
     return (
-        <div className="bg-gradient-to-t from-[#f7ede2] to-[#c2915e] min-h-screen p-8">
+        <div className="bg-gradient-to-t from-[#f7ede2] to-[#c2915e] min-h-screen p-8 scroll-smooth">
             {/* Pre-bio Section */}
             <div className="flex gap-10 mb-8">
                 <div className="text-center p-8 flex flex-col items-start bg-white shadow-md rounded-xl">
@@ -32,9 +32,9 @@ export default function Home() {
                     <p className="text-gray-700">
                         An engineering student from Kasetsart University, switching careers to software development from JSD#9 by Generation Thailand.
                     </p>
-                    <div className="flex gap-4 my-6">
-                        <button className="bg-gradient-to-r from-teal-500 to-emerald-500 text-white font-bold rounded-lg px-4 py-2 transition duration-300 hover:scale-105">Download CV</button>
-                        <button className="bg-gradient-to-r from-teal-500 to-emerald-500 text-white font-bold rounded-lg px-4 py-2 transition duration-300 hover:scale-105">Contact Me</button>
+                    <div className="flex gap-4 my-6 ">
+                        <a download href="/assets/CV_Teeramaet Srimanon.pdf" className =" bg-gradient-to-r from-teal-500 to-emerald-500 text-white font-bold rounded-lg px-4 py-2 transition duration-300 hover:scale-105">Download CV</a>
+                        <a href="#contact" className="bg-gradient-to-r from-teal-500 to-emerald-500 text-white font-bold rounded-lg px-4 py-2 transition duration-300 hover:scale-105">Contact Me</a>
                     </div>
                     <div className="flex gap-6">
                         <a href="https://github.com/JLezzzzz" target="_blank">
@@ -77,42 +77,53 @@ export default function Home() {
             </div>
 
             {/* Contact Form */}
-            <form 
-                method="POST" 
-                action="https://getform.io/f/6ca2ae1d-a5a5-476c-a1b0-3d092c548623"
-                className="mt-12 mx-auto max-w-lg bg-white p-6 rounded-xl shadow-lg"
-            >
+           <form 
+                id="contact"
+                method="POST"
+                action="https://formsubmit.co/teeramaet.w@gmail.com"
+                className="mt-12 mx-auto max-w-lg bg-white p-6 rounded-xl shadow-lg "
+                >
+                <input type="hidden" name="_subject" value="New message from portfolio site!" />
+                <input type="hidden" name="_template" value="box" />
+
                 <h3 className="text-3xl font-semibold text-gray-800 mb-4">Let's Collaborate</h3>
+
                 <div className="flex flex-col mb-4">
                     <label className="text-gray-600 mb-2" htmlFor="name">Your Name:</label>
                     <input 
-                        className="p-3 border rounded-md" 
-                        type="text" 
-                        id="name" 
-                        name="name" 
-                        placeholder="Name"
+                    className="p-3 border rounded-md" 
+                    type="text" 
+                    id="name" 
+                    name="name" 
+                    placeholder="Name"
+                    required
                     />
                 </div>
+
                 <div className="flex flex-col mb-4">
                     <label className="text-gray-600 mb-2" htmlFor="email">Your Email:</label>
                     <input 
-                        className="p-3 border rounded-md" 
-                        type="email" 
-                        id="email" 
-                        name="email" 
-                        placeholder="Email"
+                    className="p-3 border rounded-md" 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    placeholder="Email"
+                    required
                     />
                 </div>
+
                 <div className="flex flex-col mb-4">
                     <label className="text-gray-600 mb-2" htmlFor="message">Your Message:</label>
                     <textarea 
-                        className="p-3 border rounded-md" 
-                        id="message" 
-                        name="message" 
-                        rows="5" 
-                        placeholder="Message"
+                    className="p-3 border rounded-md" 
+                    id="message" 
+                    name="message" 
+                    rows="5" 
+                    placeholder="Message"
+                    required
                     />
                 </div>
+
                 <button 
                     type="submit" 
                     className="w-full py-3 mt-4 bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-bold rounded-lg transition hover:scale-105"
