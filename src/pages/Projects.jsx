@@ -15,6 +15,14 @@ export default function Projects() {
           deploy="https://seal-over-the-walls.vercel.app/"
         />
         <ProjectCard
+          image="/assets/images/notesApp.jpg"
+          projectName="Full stack notes application"
+          stack="MERN"
+          responsive="Desktop"
+          github="https://github.com/JLezzzzz/noteApps_frontEnd & https://github.com/JLezzzzz/seal-over-the-wall-backEnd"
+          deploy="https://note-apps-front-end.vercel.app/"
+        />
+        <ProjectCard
           image="/assets/images/colma.jpg"
           projectName="Colma Academy"
           stack="HTML/CSS"
@@ -30,6 +38,7 @@ export default function Projects() {
           github="https://github.com/JLezzzzz/career-changer-react-assessment"
           deploy="https://career-changer-react-assessment-omega-umber.vercel.app/"
         />
+        
       </div>
     </div>
   );
