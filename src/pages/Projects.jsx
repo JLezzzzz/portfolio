@@ -19,7 +19,7 @@ export default function Projects() {
           projectName="Full stack notes application"
           stack="MERN"
           responsive="Desktop"
-          github="https://github.com/JLezzzzz/noteApps_frontEnd & https://github.com/JLezzzzz/seal-over-the-wall-backEnd"
+          github="https://github.com/JLezzzzz/noteApps_frontEnd"
           deploy="https://note-apps-front-end.vercel.app/"
         />
         <ProjectCard
