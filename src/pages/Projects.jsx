@@ -35,8 +35,8 @@ export default function Projects() {
           projectName="CRUD assessment"
           stack="React"
           responsive="Desktop/Mobile"
-          github="https://github.com/JLezzzzz/career-changer-react-assessment"
-          deploy="https://career-changer-react-assessment-omega-umber.vercel.app/"
+          github="https://github.com/JLezzzzz/react_assessment_crud"
+          deploy="https://react-assessment-crud.vercel.app/"
         />
         
       </div>

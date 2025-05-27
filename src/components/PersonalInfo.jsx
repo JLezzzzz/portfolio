@@ -19,7 +19,7 @@ function PersonalInfo() {
         <ul className='mt-2 text-gray-700 space-y-1'>
           <li>Teeramaet Srimanon</li>
           <li>089 482 1873 (+66)</li>
-          <li>Teeramaet.w@gmail.com</li>
+          <li>teeramaet.w@gmail.com</li>
           <li>49/547 Nimatmai road, Sam Wa Tawan-Ok, KlongSamWa Bangkok 10510</li>
           <li>Kasetsart University - Aerospace Engineering</li>
         </ul>
