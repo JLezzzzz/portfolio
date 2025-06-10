@@ -34,7 +34,7 @@ export default function Home() {
                                 Junior software developer with a strong engineering background and two years of experience in data center sales. <br/> I bring a unique combination of technical problem-solving skills, and effective communication abilities.
                             </p>
                             <div className="flex gap-4 my-6">
-                                <a download href="/assets/CV_Teeramaet Srimanon.pdf" className =" bg-gradient-to-r from-teal-500 to-emerald-500 text-white font-bold rounded-lg px-4 py-2 transition duration-300 hover:scale-105">Download CV</a>
+                                <a download href="/assets/CV_Teeramaet Srimanon 31May.pdf" className =" bg-gradient-to-r from-teal-500 to-emerald-500 text-white font-bold rounded-lg px-4 py-2 transition duration-300 hover:scale-105">Download CV</a>
                                 <a href="#contact" className="bg-gradient-to-r from-teal-500 to-emerald-500 text-white font-bold rounded-lg px-4 py-2 transition duration-300 hover:scale-105">Contact Me</a>
                             </div>
                             <div className="flex gap-6">
