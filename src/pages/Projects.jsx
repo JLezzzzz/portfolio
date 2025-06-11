@@ -38,7 +38,15 @@ export default function Projects() {
           github="https://github.com/JLezzzzz/react_assessment_crud"
           deploy="https://react-assessment-crud.vercel.app/"
         />
-        
+        <ProjectCard
+          image="/assets/images/next.jpg"
+          projectName="Next Auth CRUD - plant shop"
+          stack="Next.ts"
+          responsive="Desktop/Mobile"
+          github="https://github.com/JLezzzzz/next_crud"
+          deploy="https://next-crud-jlezzzzzs-projects.vercel.app/"
+        />
+
       </div>
     </div>
   );
